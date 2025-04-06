@@ -115,3 +115,22 @@ exports.signin = async (req, res) => {
         });
     }
 }
+
+
+// sign out ka handler
+exports.signout=async(req,res)=>{
+    try{
+        res.clearCookie("token");
+        return res.status(200).json({
+            success: true,
+            message: "User sign out successsfully."
+        })
+    }
+    catch(error){
+        console.log("Error in sign ou",error);
+        return res.status(500).json({
+            success: false,
+            message: "Sign out successfully."
+        })
+    }
+}

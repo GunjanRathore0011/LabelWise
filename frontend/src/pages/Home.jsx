@@ -7,7 +7,10 @@ import { MdHealthAndSafety } from "react-icons/md";
 import Testimonials from "./Testimonials";
 import { useNavigate } from "react-router-dom";
 
+
 const Home = () => {
+
+
   const navigate = useNavigate();
 
   const handleUploadClick = () => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link,  useNavigate } from 'react-router-dom'
 import { z } from "zod"
 
@@ -19,7 +19,7 @@ import { Input } from "@/components/ui/input"
 
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'sonner'
-import { signUpStart, signUpFailure, signUpSuccess } from '@/redux/user/userSlice'
+import { signUpStart, signUpFailure, signUpSuccess, clearError } from '@/redux/user/userSlice'
 
 const formSchema = z.object({
   name: z
@@ -48,6 +48,11 @@ const SignUpForm = () => {
     },
   })
   
+  useEffect(() => {
+    dispatch(clearError());
+  }, []);
+  
+
   async function onSubmit(values) {
     dispatch(signUpStart())
     const res = await fetch('/api/auth/signup', {

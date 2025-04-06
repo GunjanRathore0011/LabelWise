@@ -56,8 +56,8 @@ const SignInForm = () => {
     const mssg=data.message
 
     if(res.ok){
-      
-      dispatch(signInSuccess(data.message))
+      // console.log(data)
+      dispatch(signInSuccess(data.user))
       toast.success(mssg)
       navigate('/')
     }
