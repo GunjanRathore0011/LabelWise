@@ -7,6 +7,7 @@ import ScanProduct from "./pages/ScanProduct";
 import Result from "./pages/Result";
 import About from "./pages/About";
 import { Toaster } from "sonner";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Route path="/about" element={<About />} />
       </Routes>
 
+
+      <Footer></Footer>
       <Toaster />
 
     </BrowserRouter>

@@ -20,7 +20,7 @@ const Navbar = () => {
                 <Link to='/about' className='hover:underline'>About</Link>
             </div>
             <Link  to='/sign-in' className='text-green-700 '>
-                <Button className=' px-5 py-2 rounded-lg text-white bg-green-800 hover:bg-green-900 transition duration-300 ease-in-out'>Sign In</Button>
+                <Button className=' px-5 py-2 rounded-lg text-white bg-green-600 hover:bg-green-700 transition duration-300 ease-in-out'>Sign In</Button>
             </Link>
 
         </div>

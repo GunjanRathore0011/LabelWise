@@ -16,6 +16,10 @@ app.use(cookieParser());
 const userRoute=require("./routes/authRoute");
 app.use("/api/auth",userRoute);
 
+
+const ocrRoute=require("./routes/ocrRoute");
+app.use("/api/ocr",ocrRoute);
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 });

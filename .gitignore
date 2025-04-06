@@ -1,0 +1,46 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code
+.vscode/
+
+# Environment files
+.env
+*.env
+
+# Log files
+*.log
+
+# macOS and Windows
+.DS_Store
+Thumbs.db
+
+# Python virtual environments
+venv/
+env/
+ENV/
+.venv/
+.pytest_cache/
+pip-wheel-metadata/
+
+# Image files (optional)
+*.jpg
+*.jpeg
+*.png
+
+# Compiled files
+*.so
+*.dll
+*.pyd
+*.pyc
+*.pyo
+*.exe
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# FastAPI specific (optional)
+*.db
+*.sqlite3
