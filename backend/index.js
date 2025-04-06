@@ -4,6 +4,12 @@ require("dotenv").config();
 const dbconnect=require("./config/database");
 const cookieParser=require("cookie-parser");
 
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:5173', 
+  credentials: true, 
+}));
 // port number
 const PORT=process.env.PORT;
 // connect with database;
@@ -23,3 +29,6 @@ app.use("/api/ocr",ocrRoute);
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 });
+
+
+

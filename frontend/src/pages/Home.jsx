@@ -15,6 +15,7 @@ const Home = () => {
 
   const handleUploadClick = () => {
     navigate("/scan-product"); 
+    
   };
   return (
     <div>

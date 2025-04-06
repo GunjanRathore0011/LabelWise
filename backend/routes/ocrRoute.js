@@ -9,17 +9,22 @@ const upload = multer({ dest: 'uploads/' });
 
 router.post('/analyze', upload.single('image'), async (req, res) => {
   const formData = new FormData();
-  formData.append('image', fs.createReadStream(req.file.path));
+  const filePath = req.file.path;
+  formData.append('file', fs.createReadStream(filePath));
 
   try {
-    const response = await axios.post('http://localhost:5000/analyze', formData, {
+    const response = await axios.post('http://localhost:8000/analyze-image', formData, {
       headers: formData.getHeaders(),
     });
-
-    res.json(response.data); // LLM-organized data
+    // console.log(response.data)
+    res.json(response.data);
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ error: 'Failed to process image' });
+  } finally {
+    fs.unlink(filePath, err => {
+      if (err) console.error('Failed to delete uploaded image:', err);
+    });
   }
 });
 

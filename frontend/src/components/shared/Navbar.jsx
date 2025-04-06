@@ -17,7 +17,7 @@ import { signOutSuccess } from '@/redux/user/userSlice';
 const Navbar = () => {
 
     const { currentUser } = useSelector((state) => state.user);
-    console.log(currentUser);
+    // console.log(currentUser);
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
