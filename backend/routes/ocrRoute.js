@@ -11,7 +11,8 @@ router.post('/analyze', upload.single('image'), async (req, res) => {
   const formData = new FormData();
   const filePath = req.file.path;
   formData.append('file', fs.createReadStream(filePath));
-
+  formData.append('productName', req.body.productName);
+  formData.append('companyName', req.body.companyName);
   try {
     const response = await axios.post('http://localhost:8000/analyze-image', formData, {
       headers: formData.getHeaders(),

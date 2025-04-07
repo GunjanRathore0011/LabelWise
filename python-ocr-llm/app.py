@@ -1,5 +1,5 @@
 # app.py
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Form
 import shutil
 from ocr_handler import extract_text_from_image
 from llm_handler import extract_nutrition_details
@@ -7,9 +7,14 @@ from llm_handler import extract_nutrition_details
 app = FastAPI()
 
 @app.post("/analyze-image")
-async def analyze_image(file: UploadFile = File(...)):
+async def analyze_image(file: UploadFile = File(...),
+    productName: str = Form(...),
+    companyName: str = Form(...)):
     temp_image_path = f"temp_{file.filename}"
     
+    # print("Product:", productName)
+    # print("Company:", companyName)
+
     # Save uploaded image
     with open(temp_image_path, "wb") as f:
         shutil.copyfileobj(file.file, f)

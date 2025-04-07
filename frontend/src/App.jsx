@@ -9,7 +9,9 @@ import About from "./pages/About";
 import { Toaster } from "sonner";
 import Footer from "./pages/Footer";
 
+
 function App() {
+  
   return (
     <BrowserRouter>
       <Navbar />

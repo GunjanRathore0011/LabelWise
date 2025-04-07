@@ -31,7 +31,7 @@ const ScanProduct = () => {
     data.append("productName", formData.productName);
     data.append("companyName", formData.companyName);
 
-
+  
     try {
       setLoading(true);
       setError(null);
@@ -56,7 +56,7 @@ const ScanProduct = () => {
         <Loader />
       ) : (
 
-        <div className="relative w-full h-screen overflow-hidden">
+        <div className="relative w-full h-screen overflow-hidden ">
           {/* Background Video */}
           <video
             autoPlay
